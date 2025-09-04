@@ -56,7 +56,7 @@
   <!-- Login Form -->
   <div class="container" id="loginBox">
   
-<img src="./1697346843915.jpg" alt="College Logo" class="logo">
+<img src="1697346843915.jpg" alt="College Logo" class="logo">
 
     <input type="text" id="username" placeholder="Username" required><br>
     <input type="password" id="password" placeholder="Password" required><br>
