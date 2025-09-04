@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>College Login Page</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 320px;
+    }
+    .logo {
+      width: 120px;
+      height: 120px;
+      margin-top: 15px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Form -->
+  <div class="container" id="loginBox">
+  
+<img src="./1697346843915.jpg" alt="College Logo" class="logo">
+
+    <input type="text" id="username" placeholder="Username" required><br>
+    <input type="password" id="password" placeholder="Password" required><br>
+    <button onclick="login()">Login</button>
+    <p id="error" style="color:red;"></p>
+    <!-- Logo comes after login fields -->
+   
+
+  </div>
+
+  <!-- Profile Page -->
+  <div class="container hidden" id="profileBox">
+    <h2>Welcome, <span id="displayUser"></span>!</h2>
+    <p>This is your profile page.</p>
+    
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    function login() {
+      let user = document.getElementById("username").value;
+      let pass = document.getElementById("password").value;
+
+      // Demo credentials
+      if (user === "admin" && pass === "1234") {
+        document.getElementById("loginBox").classList.add("hidden");
+        document.getElementById("profileBox").classList.remove("hidden");
+        document.getElementById("displayUser").innerText = user;
+      } else {
+        document.getElementById("error").innerText = "Invalid username or password";
+      }
+    }
+
+    function logout() {
+      document.getElementById("loginBox").classList.remove("hidden");
+      document.getElementById("profileBox").classList.add("hidden");
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("error").innerText = "";
+    }
+  </script>
+
+</body>
+</html>
